@@ -7,7 +7,7 @@ const Contact = require("./model/contact");
 const app = express();
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
-app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static("./assests"));
 // let contact_list = [
 //   {
