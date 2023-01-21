@@ -25,10 +25,7 @@ app.get("/", (req, res) => {
       console.log("Something went wrong while rendering data");
       return;
     }
-    return res.render("home", {
-      title: "Contact List",
-      contacts: contact_list,
-    });
+    return res.send("<h1> Testing  </h1>")
   });
 });
 app.get("/delete", (req, res) => {
