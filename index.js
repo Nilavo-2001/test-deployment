@@ -20,6 +20,7 @@ app.use(express.static("./assests"));
 //   },
 // ];
 app.get("/", (req, res) => {
+  console.log("I am here ");
   Contact.find({}, (err, contact_list) => {
     if (err) {
       console.log("Something went wrong while rendering data");
