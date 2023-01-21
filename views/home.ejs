@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <div>
+      <ul>
+        <% for(let i of contacts) { %>
+        <div>
+          <li>
+            <h2><%= i.Name %></h2>
+            <h3><%= i.Phone %></h3>
+          </li>
+        </div>
+        <div>
+          <button>
+            <a href="/delete/?id=<%= i._id %>" id=" <%= i._id %>  ">DELETE</a>
+          </button>
+        </div>
+        <% } %>
+      </ul>
+    </div>
+    <form action="/sendData" method="post">
+      <input type="text" name="Name" id="Name" placeholder="Enter your Name" />
+      <input
+        type="text"
+        name="Phone"
+        id="Phone"
+        placeholder="Enter your Phone Number"
+      />
+      <input type="submit" value="Add" />
+    </form>
+    <script src="/home.js"></script>
+  </body>
+</html>
